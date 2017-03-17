@@ -41,15 +41,13 @@
 
 
 
-  // only for testing purposes
-  // all calls should be initiated through the module
+
   const test = function test(restaurants) {
-    bulkIndex('library', 'restaurant', restaurants);
+    bulkIndex('rest', 'restaurant', restaurants);
   };
 
 
   const csvFileName="/Users/renadibrahim/Documents/elmenus/restaurants.csv";
-  //const csvFileName="./restaurants.csv";
 	const restRaw = fs.createReadStream(csvFileName).pipe(csvConverter);
   csvConverter.on("end_parsed",function(jsonObj){
 	  test(jsonObj);

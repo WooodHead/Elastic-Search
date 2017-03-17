@@ -30,28 +30,20 @@
         }
       }
     };
-    //console.log(`retrieving restuarants with a combined bool query (displaying ${body.size} items at a time)...`);
     search('library', body)
     .then(results => {
-      //console.log(`found ${results.hits.total} items in ${results.took}ms`);
-      if (results.hits.total > 0) //console.log(`returned restuarants names:`);
-      //results.hits.hits.forEach((hit, index) => console.log(`\t${body.from + ++index} - ${hit._source.name_en} (score: ${hit._score})`));
-      //console.log(results.hits.hits[0]);
+      
+      if (results.hits.total > 0) 
       return callback(results.hits.hits);
     })
     .catch(console.error);
     
   };
 
-  //test(function(response){
-  //  console.log(response);
-  //});
+  
   module.exports.res=res;
   module.exports.test = test;
   module.exports.search = search;
   
-  //module.exports = {
-  //  search
-  //};
 
 } ());
