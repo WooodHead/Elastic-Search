@@ -50,7 +50,6 @@
     
   };
 
-  test(1,10,function(response){});
   module.exports.res=res;
   module.exports.test = test;
   module.exports.search = search;
